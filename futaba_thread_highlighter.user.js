@@ -381,6 +381,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			"}" +
 			//ピックアップスレ
 			".futaba_thread_highlighter_pickuped {" +
+			"  max-width: 250px;" +
 			"  min-width: 70px;" +
 			"  margin: 1px;" +
 			"  background-color: #FFDFE9;" +
