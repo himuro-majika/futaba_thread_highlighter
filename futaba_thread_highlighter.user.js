@@ -158,10 +158,11 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				"z-index": "1001",
 				left: "50%",
 				top: "50%",
-				"margin-left": "-400px",
+				"text-align": "center",
+				"margin-left": "-475px",
 				"margin-top": "-50px",
 				"background-color": "rgba(240, 192, 214, 0.95)",
-				width: "800px",
+				width: "950px",
 				//height: "100px",
 				display: "none",
 				fontWeight: "normal",
@@ -173,7 +174,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		});
 		$("#futaba_thread_highlighter_container_header").append($config_container);
 		$config_container.append(
-			$("<div>").css("text-align", "center").append(
+			$("<div>").append(
 				$("<div>").text("スレ本文に含まれる語句を入力してください。 | を挟むと複数指定できます。正規表現使用可。"),
 				$("<div>").text("例 : ").append(
 					$("<span>").text("妹がレイ|悪魔がおる|みなもちゃんかわいい|つまんね").css({
@@ -184,18 +185,43 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			$("<div>").css("margin-top", "1em").append(
 				$("<div>").append(
 					$("<label>").text("全板共通").attr("for", "futaba_thread_highlighter_searchword_common"),
-					$("<input>").attr("id","futaba_thread_highlighter_searchword_common").css("width", "54em")
+					$("<input>").attr({
+						"id": "futaba_thread_highlighter_searchword_common",
+						"class": "futaba_thread_highlighter_input"
+					}).css("width", "54em"),
+					$("<span>").append(
+						$("<input>", {
+							class: "futaba_thread_highlighter_config_button",
+							type: "button",
+							val: "区切り文字挿入",
+							click: function(){
+								insertDelimiter("futaba_thread_highlighter_searchword_common");
+							},
+						})
+					)
 				),
 				$("<div>").append(
 					$("<label>").text("各板個別").attr("for", "futaba_thread_highlighter_searchword_individual"),
-					$("<input>").attr("id","futaba_thread_highlighter_searchword_individual").css("width", "54em")
+					$("<input>").attr({
+						"id": "futaba_thread_highlighter_searchword_individual",
+						"class": "futaba_thread_highlighter_input"
+					}).css("width", "54em"),
+					$("<span>").append(
+						$("<input>", {
+							class: "futaba_thread_highlighter_config_button",
+							type: "button",
+							val: "区切り文字挿入",
+							click: function(){
+								insertDelimiter("futaba_thread_highlighter_searchword_individual");
+							},
+						})
+					)
 				)
 			),
 			$("<div>").css({
-				"text-align": "center",
 				"margin-top": "1em",
 			}).append(
-				$("<span>").css("margin-right", "1em").append(
+				$("<span>").css("margin", "0 1em").append(
 					$("<input>", {
 						class: "futaba_thread_highlighter_config_button",
 						type: "button",
@@ -205,7 +231,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 						},
 					})
 				),
-				$("<span>").css("margin-left", "1em").append(
+				$("<span>").css("margin", "0 1em").append(
 					$("<input>", {
 						class: "futaba_thread_highlighter_config_button",
 						type: "button",
@@ -227,6 +253,21 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		}, function() {
 			$(this).css("background-color", "#FFECFD");
 		});
+
+		/*
+		 * カーソル位置にデリミタ挿入
+		 */
+		function insertDelimiter(id){
+			var $input = $("#" + id);
+			var val = $input.val();
+			console.log(val);
+			var position = $input[0].selectionStart;
+			console.log(position);
+			var newval = val.substr(0, position) + "|" + val.substr(position);
+			console.log(val.substr(0, position));
+			$input.val(newval);
+			$input[0].setSelectionRange(position + 1 ,position + 1);
+		}
 	}
 
 	/*
