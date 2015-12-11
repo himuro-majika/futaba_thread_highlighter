@@ -260,11 +260,8 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		function insertDelimiter(id){
 			var $input = $("#" + id);
 			var val = $input.val();
-			console.log(val);
 			var position = $input[0].selectionStart;
-			console.log(position);
 			var newval = val.substr(0, position) + "|" + val.substr(position);
-			console.log(val.substr(0, position));
 			$input.val(newval);
 			$input[0].setSelectionRange(position + 1 ,position + 1);
 		}
