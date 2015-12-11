@@ -309,7 +309,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				if( $(this).text().match(re) ) {
 					if ( !$(this).children(".futaba_thread_highlighter_matchedword").length ) {
 						$(this).html($(this).html().replace(re, "<span class='futaba_thread_highlighter_matchedword'>" +
-															$(this).text().match(re) + "</span>"));
+															$(this).text().match(re)[0] + "</span>"));
 					}
 					if ( $(this).parent("a").length ) {		//文字スレ
 						$(this).parent().parent("td").addClass("futaba_thread_highlighter_highlighted");
