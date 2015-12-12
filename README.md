@@ -5,10 +5,9 @@
 一度検索ワードを設定しておけば定時スレ等が探しやすくなります。  
 
 
-Firefox + Greasemonkey,  
-Chrome + Tampermonkey,  
-Opera(ver.15+) + Tampermonkey  
-
+Firefox + [Greasemonkey](https://addons.mozilla.org/ja/firefox/addon/greasemonkey/),  
+Chrome + [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo),  
+Opera(ver.15+) + [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)  
 で動作確認済みです
 
 
