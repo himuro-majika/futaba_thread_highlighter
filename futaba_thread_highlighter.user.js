@@ -43,6 +43,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		$("#futaba_thread_highlighter_searchword_individual").val(word_indiv);
 		var $config_container_ = $("#futaba_thread_highlighter_config_container");
 		$config_container_.fadeIn(100);
+		setRandomExample();
 	}
 
 	/*
@@ -177,8 +178,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			$("<div>").append(
 				$("<div>").text("スレ本文に含まれる語句を入力してください。 | を挟むと複数指定できます。正規表現使用可。"),
 				$("<div>").text("例 : ").append(
-					$("<span>").text("妹がレイ|悪魔がおる|みなもちゃんかわいい|つまんね").css({
+					$("<span>").attr("id", "futaba_thread_highlighter_example").css({
 						"background-color": "#ffeeee",
+						"padding": "2px",
+						"font-weight": "bold"
 					})
 				)
 			),
@@ -253,6 +256,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		}, function() {
 			$(this).css("background-color", "#FFECFD");
 		});
+		setRandomExample();
 
 		/*
 		 * カーソル位置にデリミタ挿入
@@ -265,6 +269,33 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			$input.val(newval);
 			$input[0].setSelectionRange(position + 1 ,position + 1);
 		}
+	}
+
+	function setRandomExample() {
+		var exampleWords = [
+			"妹がレイ",
+			"悪魔がおる",
+			"みなもちゃんかわいい",
+			"つまんね",
+			"マジか",
+			"落ち着け",
+			"アオいいよね",
+			"いい…",
+			"ﾌﾗﾜﾊﾊ",
+			"(i)orz",
+			"うま(み|あじ)",
+			"[0-9]時から！",
+			"mjpk\\!\\?",
+			"よしとみくんは何が好き？",
+			"焼肉！"
+		];
+		var rand, randwords = [];
+		for(var i = 0, l = exampleWords.length; i < 3; i++, l--) {
+			rand = Math.floor(Math.random() * l);
+			randwords.push(exampleWords.splice(rand, 1)[0]);
+		}
+		var example = randwords.join("|");
+		$("#futaba_thread_highlighter_example").text(example);
 	}
 
 	/*
