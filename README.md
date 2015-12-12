@@ -31,7 +31,9 @@ Firefoxアドオン[ねないこ](http://nenaiko.sakura.ne.jp/nenaiko/)と併用
 [futaba_catalog_mod(クラシックバージョン)※ねないこユーザー向け](https://userstyles.org/styles/114130/futaba-catalog-mod-classic)
 
 ## 更新履歴
-
+* v.1.6 2015-12-12
+  - 設定画面に区切り文字を挿入ボタンを追加
+  - 検索ワードの正規表現の処理を修正
 * v1.5 2015-07-07
   - 板毎の検索ワードの設定を追加
   - 削除した検索ワードのハイライトが残ったままになる問題を修正
