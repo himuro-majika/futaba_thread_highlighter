@@ -29,8 +29,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		setStyle();
 		makecontainer();
 		makeConfigUI();
-		highlight();
-		setInterval(check_akahuku_reload, "100");
+		check_akahuku_reload();
 	}
 
 	/*
@@ -302,48 +301,29 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	 *赤福の動的リロードの状態を取得
 	 */
 	function check_akahuku_reload() {
-		if ( get_akahuku_reloading_status() === 0 || get_akahuku_reloading_status() == 1 ) {
-			akahukuloadstat = true;
+		var target = $("html > body").get(0);
+		if ($("#cat_search").length) {
+			// ふたクロ
+			highlight();
+			target = $("html > body > table[align='center']").get(0);
 		}
-		else if ( get_akahuku_reloading_status() == 2 || get_akahuku_reloading_status() == 3 ) {
-			if ( akahukuloadstat ) {
-				highlight();
-			}
-			akahukuloadstat = false;
-		}
-		function get_akahuku_reloading_status() {
-			var $acrs = $("#akahuku_catalog_reload_status");	//赤福
-			var $fvw = $("#fvw_mes");							//ふたクロ
-			var relstat;
-			if ( $acrs.length ) {
-				//赤福
-				if ( $acrs.text().match(/ロード中/) ) {
-					relstat = 0;
-				}
-				else if ( $acrs.text().match(/更新中/) ) {
-					relstat = 1;
-				}
-				else if ( $acrs.text().match(/完了しました/) ) {
-					relstat = 2;
+		var observer = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				var nodes = $(mutation.addedNodes);
+				if ($("#cat_search").length) {
+					// ふたクロ
+					if (nodes.length) {
+						highlight();
+					}
 				}
 				else {
-					relstat = 3;
+					if (nodes.attr("align") == "center") {
+						highlight();
+					}
 				}
-			}
-			if ( $fvw.length ){
-				//ふたクロ
-				if ( $fvw.text().match(/Now Loading/) ) {
-					relstat = 0;
-				}
-				else if ( $fvw.text().match(/更新しました/) ) {
-					relstat = 2;
-				}
-				else {
-					relstat = 3;
-				}
-			}
-			return relstat;
-		}
+			});
+		});
+		observer.observe(target, { childList: true });
 	}
 
 	/*
