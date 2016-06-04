@@ -291,7 +291,8 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			"焼肉！",
 			"そろそろ",
 			"(はじ)?まるよ?",
-			"ワグナス！！"
+			"ワグナス！！",
+			"ﾜｰｵ！"
 		];
 		var rand, randwords = [];
 		for(var i = 0, l = exampleWords.length; i < 3; i++, l--) {
