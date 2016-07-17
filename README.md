@@ -5,11 +5,9 @@
 一度検索ワードを設定しておけば定時スレ等が探しやすくなります。  
 
 
-Firefox + [Greasemonkey](https://addons.mozilla.org/ja/firefox/addon/greasemonkey/),  
-Chrome + [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo),  
-Opera(ver.15+) + [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)  
-で動作確認済みです
-
+Firefoxの場合、[Greasemonkey](https://addons.mozilla.org/ja/firefox/addon/greasemonkey/)を先にインスールしてからスクリプトをインストールして下さい(Scriptishは動作対象外です)  
+Chromeの場合、[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)を先にインスールしてからスクリプトをインストールして下さい  
+Opera(ver.15+)の場合、[Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)を先にインスールしてからスクリプトをインストールして下さい  
 
 ※このUserscriptは[赤福Firefox SP](http://toshiakisp.github.io/akahuku-firefox-sp/)と[ふたクロ](http://futakuro.com/)に対応しています。
 
@@ -30,6 +28,8 @@ Firefoxアドオン[ねないこ](http://nenaiko.sakura.ne.jp/nenaiko/)と併用
 [futaba_catalog_mod(クラシックバージョン)※ねないこユーザー向け](https://userstyles.org/styles/114130/futaba-catalog-mod-classic)
 
 ## 更新履歴
+* v.1.6.2 2016-07-17
+  - 赤福で「カタログを左寄せ」を有効にしていると動作しない問題を修正
 * v.1.6.1 2016-06-04
   - 監視処理の最適化
 * v.1.6 2015-12-12
