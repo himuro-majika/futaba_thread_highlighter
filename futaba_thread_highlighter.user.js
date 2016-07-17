@@ -110,7 +110,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		var $pickup_thread_area = $("<div>", {
 			id: "GM_fth_container"
 		});
-		$("body > table[align]").before($pickup_thread_area);
+		$("body > table[border]").before($pickup_thread_area);
 
 		var $container_header = $("<div>", {
 			id: "GM_fth_container_header",
@@ -292,6 +292,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			"そろそろ",
 			"(はじ)?まるよ?",
 			"ワグナス！！",
+			"ｵﾏﾝｺﾊﾟﾝﾃｨｰ",
 			"ﾜｰｵ！"
 		];
 		var rand, randwords = [];
@@ -311,7 +312,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		if ($("#cat_search").length) {
 			// ふたクロ
 			highlight();
-			target = $("html > body > table[align='center']").get(0);
+			target = $("html > body > table[border]").get(0);
 		}
 		var observer = new MutationObserver(function(mutations) {
 			mutations.forEach(function(mutation) {
@@ -322,7 +323,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 						highlight();
 					}
 				}
-				else if (nodes.attr("align") == "center") {
+				else if (nodes.attr("border") == "1") {
 					highlight();
 				}
 			});
@@ -358,7 +359,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		}
 		if( words !== "" ) {
 			removeOldHighlighted();
-			$("body > table[align] td small").each(function(){
+			$("body > table[border] td small").each(function(){
 				if( $(this).text().match(re) ) {
 					if ( !$(this).children(".GM_fth_matchedword").length ) {
 						$(this).html($(this).html().replace(re,
