@@ -28,6 +28,8 @@ Firefoxアドオン[ねないこ](http://nenaiko.sakura.ne.jp/nenaiko/)と併用
 [futaba_catalog_mod(クラシックバージョン)※ねないこユーザー向け](https://userstyles.org/styles/114130/futaba-catalog-mod-classic)
 
 ## 更新履歴
+* v.1.6.3 2016-10-03
+  - Firefoxで赤福を使用していない時に初期化ができていなかった問題を修正(thanks iroha ao)
 * v.1.6.2 2016-07-17
   - 赤福で「カタログを左寄せ」を有効にしていると動作しない問題を修正
 * v.1.6.1 2016-06-04

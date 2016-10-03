@@ -3,12 +3,13 @@
 // @namespace   https://github.com/himuro-majika
 // @description スレ本文を検索してカタログでスレッド監視しちゃう
 // @include     http://*.2chan.net/*/futaba.php?mode=cat*
-// @version     1.6.2
+// @version     1.6.3
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @grant       GM_registerMenuCommand
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_addStyle
+// @license     MIT
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAPUExURYv4i2PQYy2aLUe0R////zorx9oAAAAFdFJOU/////8A+7YOUwAAAElJREFUeNqUj1EOwDAIQoHn/c88bX+2fq0kRsAoUXVAfwzCttWsDWzw0kNVWd2tZ5K9gqmMZB8libt4pSg6YlO3RnTzyxePAAMAzqMDgTX8hYYAAAAASUVORK5CYII=
 // ==/UserScript==
 
@@ -31,6 +32,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		setStyle();
 		makecontainer();
 		makeConfigUI();
+		highlight();
 		check_akahuku_reload();
 	}
 
