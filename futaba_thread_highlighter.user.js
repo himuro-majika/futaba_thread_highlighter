@@ -32,6 +32,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		setStyle();
 		makecontainer();
 		makeConfigUI();
+		highlight();
 		check_akahuku_reload();
 	}
 
