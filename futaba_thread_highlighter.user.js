@@ -3,7 +3,8 @@
 // @namespace   https://github.com/himuro-majika
 // @description スレ本文を検索してカタログでスレッド監視しちゃう
 // @include     http://*.2chan.net/*/futaba.php?mode=cat*
-// @version     1.6.3
+// @include     https://*.2chan.net/*/futaba.php?mode=cat*
+// @version     1.6.4
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @grant       GM_registerMenuCommand
 // @grant       GM_getValue
