@@ -327,7 +327,13 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 					}
 				}
 				else if (nodes.attr("border") == "1") {
-					highlight();
+					var timer = setInterval(function() {
+						var status = $("#akahuku_catalog_reload_status").text();
+						if(status === "" || status == "完了しました") {
+							clearInterval(timer);
+							highlight();
+						}
+					}, 10);
 				}
 			});
 		});
