@@ -4,7 +4,7 @@
 // @description スレ本文を検索してカタログでスレッド監視しちゃう
 // @include     http://*.2chan.net/*/futaba.php?mode=cat*
 // @include     https://*.2chan.net/*/futaba.php?mode=cat*
-// @version     1.6.4
+// @version     1.6.5
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @grant       GM_registerMenuCommand
 // @grant       GM_getValue
@@ -327,7 +327,13 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 					}
 				}
 				else if (nodes.attr("border") == "1") {
-					highlight();
+					var timer = setInterval(function() {
+						var status = $("#akahuku_catalog_reload_status").text();
+						if(status === "" || status == "完了しました") {
+							clearInterval(timer);
+							highlight();
+						}
+					}, 10);
 				}
 			});
 		});
