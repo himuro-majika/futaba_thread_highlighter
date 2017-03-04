@@ -4,7 +4,7 @@
 // @description スレ本文を検索してカタログでスレッド監視しちゃう
 // @include     http://*.2chan.net/*/futaba.php?mode=cat*
 // @include     https://*.2chan.net/*/futaba.php?mode=cat*
-// @version     1.6.5
+// @version     1.6.6
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @grant       GM_registerMenuCommand
 // @grant       GM_getValue
@@ -415,7 +415,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				//console.log($(this).children("a").html());
 				//$(this).children("a").replaceWith("<div class='GM_fth_pickuped_caption'>" + $(this).html() + "</div>");
 			} else {
-				$(this).children("small").replaceWith("<div class='GM_fth_pickuped_caption'>" +
+				$(this).children("small:not(.aima_aimani_generated)").replaceWith("<div class='GM_fth_pickuped_caption'>" +
 													  $(this).children("small").html() + "</div>");
 				$(this).children("br").replaceWith();
 			}
