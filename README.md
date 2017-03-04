@@ -28,6 +28,8 @@ Firefoxアドオン[ねないこ](http://nenaiko.sakura.ne.jp/nenaiko/)と併用
 [futaba_catalog_mod(クラシックバージョン)※ねないこユーザー向け](https://userstyles.org/styles/114130/futaba-catalog-mod-classic)
 
 ## 更新履歴
+* v.1.6.6 2017-03-04
+  - 赤福と合間合間にを同時に使用している場合に該当スレッドの表示が乱れる問題を修正(thanks akoya_tomo)
 * v.1.6.5 2017-02-25
   - 赤福の最新に更新で動作しなくなっていた問題を修正
 * v.1.6.4 2016-11-13
